@@ -9,7 +9,8 @@ concordia_burger_club/
 ├── utils_cbc.py                 # Funciones auxiliares
 ├── datos/
 │   ├── productos.json           # Datos de productos
-│   └── pedidos.json             # Datos de pedidos
+│   ├── pedidos.json             # Datos de pedidos
+│   └── combos.json              # Datos de combos predefinidos (opcional)
 
 ----------------------------------------------------------------------------------
 

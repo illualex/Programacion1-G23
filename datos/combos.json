@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "nombre": "Combo clásico",
+    "productos": [
+      {
+        "id": 1,
+        "nombre": "Hamburguesa simple",
+        "precio": 1000,
+        "categoria": "hamburguesas"
+      },
+      {
+        "id": 3,
+        "nombre": "Papas fritas chico",
+        "precio": 500,
+        "categoria": "acompañamientos"
+      },
+      {
+        "id": 5,
+        "nombre": "Gaseosa chico",
+        "precio": 400,
+        "categoria": "bebidas"
+      }
+    ],
+    "precio_base": 1800
+  },
+  {
+    "id": 2,
+    "nombre": "Combo doble",
+    "productos": [
+      {
+        "id": 2,
+        "nombre": "Hamburguesa doble",
+        "precio": 1500,
+        "categoria": "hamburguesas"
+      },
+      {
+        "id": 4,
+        "nombre": "Papas fritas grande",
+        "precio": 800,
+        "categoria": "acompañamientos"
+      },
+      {
+        "id": 6,
+        "nombre": "Gaseosa grande",
+        "precio": 700,
+        "categoria": "bebidas"
+      }
+    ],
+    "precio_base": 2700
+  }
+]
