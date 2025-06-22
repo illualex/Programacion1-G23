@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "nombre": "Papas fritas chico",
+    "precio": 500,
+    "categoria": "acompañamientos"
+  },
+  {
+    "id": 2,
+    "nombre": "Papas fritas grande",
+    "precio": 800,
+    "categoria": "acompañamientos"
+  }
+]

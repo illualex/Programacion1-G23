@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "nombre": "Gaseosa chico",
+    "precio": 400,
+    "categoria": "bebidas"
+  },
+  {
+    "id": 2,
+    "nombre": "Gaseosa grande",
+    "precio": 700,
+    "categoria": "bebidas"
+  }
+]

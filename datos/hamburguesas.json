@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "nombre": "Hamburguesa simple",
+    "precio": 1000,
+    "categoria": "hamburguesas"
+  },
+  {
+    "id": 2,
+    "nombre": "Hamburguesa doble",
+    "precio": 1500,
+    "categoria": "hamburguesas"
+  }
+]

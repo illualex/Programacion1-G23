@@ -1,1 +1,110 @@
-[]
+[
+    {
+        "id": 1,
+        "combo": "Combo clásico",
+        "productos": [
+            {
+                "id": 1,
+                "nombre": "Hamburguesa simple",
+                "precio": 1000,
+                "categoria": "hamburguesas"
+            },
+            {
+                "id": 3,
+                "nombre": "Papas fritas chico",
+                "precio": 500,
+                "categoria": "acompañamientos"
+            },
+            {
+                "id": 5,
+                "nombre": "Gaseosa chico",
+                "precio": 400,
+                "categoria": "bebidas"
+            }
+        ],
+        "total": 1900,
+        "tamaño_bebida": null,
+        "recargo_tamaño_bebida": 0,
+        "tamaño_papas": null,
+        "recargo_tamaño_papas": 0,
+        "tamaño_hamburguesa": null,
+        "recargo_tamaño_hamburguesa": 0,
+        "cantidad_aderezos": 0,
+        "recargo_aderezos": "no",
+        "cliente": "ale1",
+        "numero_ticket": 46049,
+        "fecha_hora": "2025-06-21 23:06:02"
+    },
+    {
+        "id": 2,
+        "combo": "Combo doble",
+        "productos": [
+            {
+                "id": 2,
+                "nombre": "Hamburguesa doble",
+                "precio": 1500,
+                "categoria": "hamburguesas"
+            },
+            {
+                "id": 4,
+                "nombre": "Papas fritas grande",
+                "precio": 800,
+                "categoria": "acompañamientos"
+            },
+            {
+                "id": 6,
+                "nombre": "Gaseosa grande",
+                "precio": 700,
+                "categoria": "bebidas"
+            }
+        ],
+        "tamaño_bebida": "mediano",
+        "recargo_tamaño_bebida": 300,
+        "tamaño_papas": "mediano",
+        "recargo_tamaño_papas": 400,
+        "tamaño_hamburguesa": "mediana",
+        "recargo_tamaño_hamburguesa": 600,
+        "cantidad_aderezos": 6,
+        "recargo_aderezos": 100,
+        "total": 4100,
+        "cliente": "alejo2",
+        "numero_ticket": 27181,
+        "fecha_hora": "2025-06-21 23:27:40"
+    },
+    {
+        "id": 3,
+        "combo": null,
+        "productos": [
+            {
+                "id": 1,
+                "nombre": "Hamburguesa simple",
+                "precio": 1000,
+                "categoria": "hamburguesas"
+            },
+            {
+                "id": 1,
+                "nombre": "Papas fritas chico",
+                "precio": 500,
+                "categoria": "acompañamientos"
+            },
+            {
+                "id": 1,
+                "nombre": "Gaseosa chico",
+                "precio": 400,
+                "categoria": "bebidas"
+            }
+        ],
+        "tamaño_bebida": "mediano",
+        "recargo_tamaño_bebida": 300,
+        "tamaño_papas": "mediano",
+        "recargo_tamaño_papas": 400,
+        "tamaño_hamburguesa": "chica",
+        "recargo_tamaño_hamburguesa": 0,
+        "cantidad_aderezos": 1,
+        "recargo_aderezos": 0,
+        "total": 2600,
+        "cliente": "zsrg",
+        "numero_ticket": 50257,
+        "fecha_hora": "2025-06-22 17:17:30"
+    }
+]

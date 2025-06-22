@@ -1,1 +1,3 @@
 comandos.txt
+__pycache__/
+*.pyc

@@ -1,16 +1,22 @@
 Arbol de carpetas
 
 concordia_burger_club/
-├── main.py                      # Punto de entrada con el menú interactivo
-├── gestion_productos.py         # ABM de productos del menú
-├── gestion_pedidos.py           # ABM de pedidos
-├── reportes_cbc.py              # Reportes por consola
-├── persistencia_cbc.py          # Lectura y escritura de archivos JSON
-├── utils_cbc.py                 # Funciones auxiliares
+├── guia.md
+├── main.py                      
+├── gestion_productos.py         
+├── gestion_combos.py            
+├── gestion_pedidos.py
+├── menu_pedidos.py
+├── personalizacion.py           
+├── reportes_cbc.py              
+├── persistencia_cbc.py          
+├── utils_cbc.py                 
 ├── datos/
-│   ├── productos.json           # Datos de productos
-│   ├── pedidos.json             # Datos de pedidos
-│   └── combos.json              # Datos de combos predefinidos (opcional)
+│   ├── acompanamientos.json
+│   ├── hamburguesas.json
+│   ├── bebidas.json
+│   ├── pedidos.json             
+│   └── combos.json              
 
 ----------------------------------------------------------------------------------
 
