@@ -1,13 +1,13 @@
 Arbol de carpetas
 
 concordia_burger_club/
+├── gitignore
+├── README.md
 ├── guia.md
 ├── main.py                      
 ├── gestion_productos.py         
 ├── gestion_combos.py            
-├── gestion_pedidos.py
-├── menu_pedidos.py
-├── personalizacion.py           
+├── gestion_pedidos.py           
 ├── reportes_cbc.py              
 ├── persistencia_cbc.py          
 ├── utils_cbc.py                 

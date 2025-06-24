@@ -579,11 +579,11 @@ def menu_pedidos():
 
     while True:
         limpiar_consola()
-        print("\n <----- Menú de Pedidos ----->")
+        print("\n===== Menu de Gestión de Pedidos =====")
         print("1. Crear pedido")
-        print("2. Buscar pedido [Ticket]")
-        print("3. Eliminar pedido [Ticket]")
-        print("4. Volver a Gestión")
+        print("2. Buscar pedido [Nrm Ticket]")
+        print("3. Eliminar pedido [Nrm Ticket]")
+        print("4. Volver al Menú Principal")
 
         opcion = input("\n> Ingrese una opción: ").strip()
 

@@ -9,7 +9,7 @@ RUTA_PEDIDOS = "datos/pedidos.json"
 RUTA_COMBOS = "datos/combos.json"
 
 
-# === Funciones genéricas ===
+# === Funciones generales ===
 def cargar_archivo(ruta):
     if os.path.exists(ruta):
         with open(ruta, "r", encoding="utf-8") as f:
