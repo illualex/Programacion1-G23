@@ -8,8 +8,7 @@ from persistencia_cbc import (
     cargar_acompanamientos,
     cargar_combos,
 )
-from utils_cbc import limpiar_consola
-from utils_cbc import mensaje_error
+from utils_cbc import limpiar_consola, mensaje_error, cancelacion_rapida
 
 # ====== CONSTANTES GLOBALES ======
 # === Recargos extra por aderezos ===
@@ -32,21 +31,10 @@ RECARGO_HAMBURGUESA_GRANDE = 1000
 def generar_numero_ticket():
     return random.randint(10000, 99999)
 
-
-# === Cancelación rápida del pedido ===
-def cancelacion_rapida(entrada):
-    if entrada.strip().lower() == "x":
-        print("\n << Operación cancelada. Volviendo al menú...")
-        input("\n Presiona Enter para continuar...")
-        return True
-    return False
-
-
 # === Encabezado de armado del pedido ===
 def encabezado_pedido():
     print("\n======== Armado de Pedido ========")
     print("- Salida rápida coloca 'x' -\n")
-
 
 # === Personalización del pedido ===
 def personalizacion_pedido(pedido):
