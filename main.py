@@ -8,13 +8,13 @@ from utils_cbc import limpiar_consola, mensaje_error
 def menu_principal():
     while True:
         limpiar_consola()
-        print("\n ===== Gestión Principal de Concordia Burger Club =====")
-        print("1. Gestionar Productos [Administrador]")
-        print("2. Gestionar Combos [Administrador]")
-        print("3. Gestionar Pedidos [Cliente]")
+        print("\n[====== Gestión Principal de Concordia Burger Club ======]\n")
+        print("1. Gestionar Productos (Administrador)")
+        print("2. Gestionar Combos (Administrador)")
+        print("3. Gestionar Pedidos (Cliente)")
         print("4. Ver Reportes")
         print("5. Salir")
-        opcion = input("\n Elegí una opción: ").strip()
+        opcion = input("\n Ingrese una opción: ").strip()
 
         if opcion == '1':
             menu_productos()

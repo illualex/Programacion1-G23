@@ -33,15 +33,15 @@ def generar_numero_ticket():
 
 # === Encabezado de armado del pedido ===
 def encabezado_pedido():
-    print("\n======== Armado de Pedido ========")
-    print("- Salida rápida coloca 'x' -\n")
+    print("\n[======== Armado de Pedido ========]")
+    print(" - Salida rápida coloca 'x' -\n")
 
 # === Personalización del pedido ===
 def personalizacion_pedido(pedido):
     while True:
         limpiar_consola()
         encabezado_pedido()
-        print(" <--- ¿Quieres agrandar el pedido? --->")
+        print(" <<--- ¿Quieres agrandar el pedido? --->>")
         print("1. Sí")
         print("2. No")
         entrada = input("\n > Elige una opción: ").strip()
@@ -55,7 +55,7 @@ def personalizacion_pedido(pedido):
             while True:
                 limpiar_consola()
                 encabezado_pedido()
-                print(" <--- Elige el tamaño de la bebida --->")
+                print(" <<--- Elige el tamaño de la bebida --->>")
                 print("1. Chica [Por defecto]")
                 print(f"2. Mediana (+${RECARGO_BEBIDA_MEDIANA})")
                 print(f"3. Grande (+${RECARGO_BEBIDA_GRANDE})")
@@ -83,7 +83,7 @@ def personalizacion_pedido(pedido):
             while True:
                 limpiar_consola()
                 encabezado_pedido()
-                print("<--- Elige el tamaño del acompañamiento --->")
+                print(" <<--- Elige el tamaño del acompañamiento --->>")
                 print("1. Chica [Por defecto]")
                 print(f"2. Mediana (+${RECARGO_ACOMPANAMIENTO_MEDIANAS})")
                 print(f"3. Grande (+${RECARGO_ACOMPANAMIENTO_GRANDES})")
@@ -111,7 +111,7 @@ def personalizacion_pedido(pedido):
             while True:
                 limpiar_consola()
                 encabezado_pedido()
-                print(" <--- Elige el tamaño de la hamburguesa --->\n")
+                print(" <<--- Elige el tamaño de la hamburguesa --->>")
                 print("1. Chica [Por defecto]")
                 print(f"2. Mediana (+${RECARGO_HAMBURGUESA_MEDIANA})")
                 print(f"3. Grande (+${RECARGO_HAMBURGUESA_GRANDE})")
@@ -145,7 +145,7 @@ def resumen_pedido(pedido):
     while True:
         limpiar_consola()
         encabezado_pedido()
-        print("<----- Resumen del Pedido ----->")
+        print(" <<---- Resumen del Pedido ---->>")
         print(f"Cliente: {pedido['cliente']}")
 
         if pedido.get("combo"):
@@ -195,7 +195,8 @@ def resumen_pedido(pedido):
         print(f"\nTotal a pagar: ${pedido['total']}")
 
         # Confirmación del pedido
-        print("\n >>> ¿Deseas confirmar este pedido? <<<")
+        print("\n----------------------------------\n")
+        print(" >>> ¿Deseas confirmar este pedido? <<<")
         print("1. Confirmar y guardar")
         print("2. Cancelar")
         eleccion = input("\n > Elige una opción: ").strip()
@@ -235,7 +236,7 @@ def crear_pedido(pedidos, combos):
         while True:
             limpiar_consola()
             encabezado_pedido()
-            print(" <--- ¿Qué quieres ordenar? --->")
+            print(" <<--- ¿Qué quieres ordenar? --->>")
             print("1. Armar tu pedido")
             print("2. Elegir un combo")
             opcion = input("\n > Elige una opción: ").strip()
@@ -249,7 +250,7 @@ def crear_pedido(pedidos, combos):
             while True:
                 limpiar_consola()
                 encabezado_pedido()
-                print(" <--- Combos disponibles --->")
+                print(" <<--- Combos disponibles --->>")
                 for combo in combos:
                     print(f"{combo['id']}. {combo['nombre']}: ${combo['precio_base']}")
                 entrada = input("\n> Elige un combo: ").strip()
@@ -277,7 +278,7 @@ def crear_pedido(pedidos, combos):
                 while True:
                     limpiar_consola()
                     encabezado_pedido()
-                    print(f" <--- Selecciona una {cat} --->")
+                    print(f" <<--- Selecciona una {cat} --->>")
                     opciones = [p for p in productos if p["categoria"] == cat]
                     for prod in opciones:
                         print(f"{prod['id']}. {prod['nombre']} - ${prod['precio']}")
@@ -302,7 +303,7 @@ def crear_pedido(pedidos, combos):
         while True:
             limpiar_consola()
             encabezado_pedido()
-            print(" <--- ¿Quieres agregar aderezos? --->")
+            print(" <<--- ¿Quieres agregar aderezos? --->>")
             print("1. Sí")
             print("2. No")
             entrada = input("\n > Elige una opción: ").strip()
@@ -313,7 +314,7 @@ def crear_pedido(pedidos, combos):
                 while True:
                     limpiar_consola()
                     encabezado_pedido()
-                    print("<--- Cantidad de Aderezos --->")
+                    print("<<--- Cantidad de Aderezos --->>")
                     cantidad = input(" > Ingresa un número: ").strip()
                     if cancelacion_rapida(cantidad):
                         return
@@ -355,7 +356,7 @@ def crear_pedido(pedidos, combos):
         while True:
             limpiar_consola()
             encabezado_pedido()
-            print("<----- Datos del Cliente ----->")
+            print("<<---- Datos del Cliente ---->>")
             cliente = input("¿A nombre de quién es el pedido?: ").strip()
             if cancelacion_rapida(cliente):
                 return
@@ -370,7 +371,7 @@ def crear_pedido(pedidos, combos):
             pedidos.append(pedido)
             guardar_pedidos(pedidos)
             print("\n----------------------------------\n")
-            print(f"<<=== Pedido creado con éxito ===>>")
+            print(f"<<==== Pedido creado con éxito ====>>")
             print(f"> Número de ticket: {pedido['numero_ticket']}")
             input("\n Presiona Enter para continuar...")
         else:
@@ -380,7 +381,7 @@ def crear_pedido(pedidos, combos):
         while True:
             limpiar_consola()
             encabezado_pedido()
-            print(" <<< ¿Deseas crear otro pedido? >>>")
+            print(" >>> ¿Deseas crear otro pedido? <<<")
             print("1. Sí")
             print("2. No, volver al menú de pedidos")
             opcion = input("\n > Elige una opción: ").strip()
@@ -567,10 +568,10 @@ def menu_pedidos():
 
     while True:
         limpiar_consola()
-        print("\n===== Menu de Gestión de Pedidos =====")
+        print("\n[======== Menu de Gestión de Pedidos ========]\n")
         print("1. Crear pedido")
-        print("2. Buscar pedido [Nrm Ticket]")
-        print("3. Eliminar pedido [Nrm Ticket]")
+        print("2. Buscar pedido (Nrm Ticket)")
+        print("3. Eliminar pedido (Nrm Ticket)")
         print("4. Volver al Menú Principal")
 
         opcion = input("\n> Ingrese una opción: ").strip()
@@ -588,7 +589,7 @@ def menu_pedidos():
         elif opcion == 3:
             eliminar_pedido(pedidos)
         elif opcion == 4:
-            print("\n << Saliendo del menú de pedidos.")
+            print("\n << Saliendo del menú de Pedidos.")
             input("\n Presiona Enter para continuar...")
             break
         else:

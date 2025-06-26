@@ -4,15 +4,159 @@
         "combo": null,
         "productos": [
             {
-                "id": 2,
-                "nombre": "Hamburguesa doble",
-                "precio": 1500,
+                "id": 4,
+                "nombre": "Hamburguesa completa",
+                "precio": 2000,
                 "categoria": "hamburguesas"
             },
             {
                 "id": 3,
                 "nombre": "Aros de cebolla",
                 "precio": 850,
+                "categoria": "acompañamientos"
+            },
+            {
+                "id": 5,
+                "nombre": "Agua mineral",
+                "precio": 400,
+                "categoria": "bebidas"
+            }
+        ],
+        "tamaño_bebida": null,
+        "recargo_tamaño_bebida": 0,
+        "tamaño_papas": null,
+        "recargo_tamaño_papas": 0,
+        "tamaño_hamburguesa": null,
+        "recargo_tamaño_hamburguesa": 0,
+        "cantidad_aderezos": 4,
+        "recargo_aderezos": 0,
+        "total": 3250,
+        "cliente": "Pepe",
+        "numero_ticket": 25735,
+        "fecha_hora": "2025-06-26 16:17:27"
+    },
+    {
+        "id": 2,
+        "combo": "Combo doble",
+        "productos": [
+            {
+                "id": 2,
+                "nombre": "Hamburguesa doble",
+                "precio": 1500,
+                "categoria": "hamburguesas"
+            },
+            {
+                "id": 4,
+                "nombre": "Papas fritas grande",
+                "precio": 800,
+                "categoria": "acompañamientos"
+            },
+            {
+                "id": 6,
+                "nombre": "Gaseosa grande",
+                "precio": 700,
+                "categoria": "bebidas"
+            }
+        ],
+        "tamaño_bebida": "chica",
+        "recargo_tamaño_bebida": 0,
+        "tamaño_papas": "mediano",
+        "recargo_tamaño_papas": 400,
+        "tamaño_hamburguesa": "chica",
+        "recargo_tamaño_hamburguesa": 0,
+        "cantidad_aderezos": 0,
+        "recargo_aderezos": 0,
+        "total": 3100,
+        "cliente": "Ricardo",
+        "numero_ticket": 36908,
+        "fecha_hora": "2025-06-26 16:17:53"
+    },
+    {
+        "id": 3,
+        "combo": null,
+        "productos": [
+            {
+                "id": 3,
+                "nombre": "Hamburguesa con cheddar y bacon",
+                "precio": 1800,
+                "categoria": "hamburguesas"
+            },
+            {
+                "id": 1,
+                "nombre": "Papas fritas",
+                "precio": 700,
+                "categoria": "acompañamientos"
+            },
+            {
+                "id": 8,
+                "nombre": "Pepsi",
+                "precio": 700,
+                "categoria": "bebidas"
+            }
+        ],
+        "tamaño_bebida": null,
+        "recargo_tamaño_bebida": 0,
+        "tamaño_papas": null,
+        "recargo_tamaño_papas": 0,
+        "tamaño_hamburguesa": null,
+        "recargo_tamaño_hamburguesa": 0,
+        "cantidad_aderezos": 3,
+        "recargo_aderezos": 0,
+        "total": 3200,
+        "cliente": "Chester",
+        "numero_ticket": 61669,
+        "fecha_hora": "2025-06-26 16:18:24"
+    },
+    {
+        "id": 4,
+        "combo": null,
+        "productos": [
+            {
+                "id": 7,
+                "nombre": "Hamburguesa criolla (huevo, jamón, morrón)",
+                "precio": 1950,
+                "categoria": "hamburguesas"
+            },
+            {
+                "id": 1,
+                "nombre": "Papas fritas",
+                "precio": 700,
+                "categoria": "acompañamientos"
+            },
+            {
+                "id": 8,
+                "nombre": "Pepsi",
+                "precio": 700,
+                "categoria": "bebidas"
+            }
+        ],
+        "tamaño_bebida": "grande",
+        "recargo_tamaño_bebida": 500,
+        "tamaño_papas": "grande",
+        "recargo_tamaño_papas": 600,
+        "tamaño_hamburguesa": "grande",
+        "recargo_tamaño_hamburguesa": 1000,
+        "cantidad_aderezos": 5,
+        "recargo_aderezos": 0,
+        "total": 5450,
+        "cliente": "Iñaki",
+        "numero_ticket": 86664,
+        "fecha_hora": "2025-06-26 16:19:06"
+    },
+    {
+        "id": 5,
+        "combo": null,
+        "productos": [
+            {
+                "id": 3,
+                "nombre": "Hamburguesa con cheddar y bacon",
+                "precio": 1800,
+                "categoria": "hamburguesas"
+            },
+            {
+                "id": 2,
+                "nombre": "Papas fritas con cheddar",
+                "precio": 900,
                 "categoria": "acompañamientos"
             },
             {
@@ -28,47 +172,11 @@
         "recargo_tamaño_papas": 400,
         "tamaño_hamburguesa": "grande",
         "recargo_tamaño_hamburguesa": 1000,
-        "cantidad_aderezos": 6,
-        "recargo_aderezos": 100,
-        "total": 4850,
-        "cliente": "test1",
-        "numero_ticket": 56477,
-        "fecha_hora": "2025-06-23 19:37:31"
-    },
-    {
-        "id": 2,
-        "combo": null,
-        "productos": [
-            {
-                "id": 1,
-                "nombre": "Hamburguesa simple",
-                "precio": 1000,
-                "categoria": "hamburguesas"
-            },
-            {
-                "id": 1,
-                "nombre": "Papas fritas",
-                "precio": 700,
-                "categoria": "acompañamientos"
-            },
-            {
-                "id": 1,
-                "nombre": "Coca-Cola",
-                "precio": 700,
-                "categoria": "bebidas"
-            }
-        ],
-        "tamaño_bebida": null,
-        "recargo_tamaño_bebida": 0,
-        "tamaño_papas": null,
-        "recargo_tamaño_papas": 0,
-        "tamaño_hamburguesa": null,
-        "recargo_tamaño_hamburguesa": 0,
-        "cantidad_aderezos": 10,
-        "recargo_aderezos": 744,
-        "total": 3144,
-        "cliente": "alejo2",
-        "numero_ticket": 83897,
-        "fecha_hora": "2025-06-23 19:54:40"
+        "cantidad_aderezos": 0,
+        "recargo_aderezos": 0,
+        "total": 5100,
+        "cliente": "Alejo",
+        "numero_ticket": 38743,
+        "fecha_hora": "2025-06-26 16:20:09"
     }
 ]

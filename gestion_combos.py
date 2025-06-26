@@ -338,13 +338,13 @@ def eliminar_combo():
 def menu_combos():
     while True:
         limpiar_consola()
-        print("\n===== Menú de Gestión de Combos =====")
+        print("\n[======== Menú de Gestión de Combos =======]\n")
         print("1. Crear Combo")
         print("2. Modificar Combo")
         print("3. Eliminar Combo")
         print("4. Volver al Menú Principal")
 
-        opcion = input("\n> Ingresa una opción: ").strip()
+        opcion = input("\n> Ingrese una opción: ").strip()
 
         if opcion == "1":
             crear_combo()
@@ -353,7 +353,7 @@ def menu_combos():
         elif opcion == "3":
             eliminar_combo()
         elif opcion == "4":
-            print("\n << Saliendo del menú de combos")
+            print("\n << Saliendo del menú de Combos")
             input("\n Presiona Enter para continuar...")
             break
         else:
