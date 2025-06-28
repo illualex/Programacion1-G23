@@ -55,13 +55,6 @@ def guardar_bebidas(datos):
 def guardar_acompanamientos(datos):
     guardar_archivo(RUTA_ACOMPANAMIENTOS, datos)
 
-
-# ===== Unificar cargas (para listados, reportes, etc.) =====
-# Devuelve una lista combinada de todos los productos (hamburguesas, bebidas y acompañamientos).
-def cargar_todos_los_productos():
-    return cargar_hamburguesas() + cargar_bebidas() + cargar_acompanamientos()
-
-
 # ===== PEDIDOS =====
 # Carga todos los pedidos desde el archivo JSON correspondiente.
 def cargar_pedidos():

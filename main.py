@@ -27,7 +27,9 @@ def menu_principal():
         elif opcion == '4':
             menu_reportes()   # Muestra menú de reportes del sistema
         elif opcion == '5':
-            print("Saliendo del sistema. ¡Gracias!")
+            limpiar_consola()
+            print("\n[=======> Saliendo del sistema. ¡Muchas Gracias! <=======]\n")
+            input(">> Presiona Enter para finalizar...")
             break
         else:
             mensaje_error()

@@ -1,57 +1,7 @@
 [
     {
         "id": 1,
-        "nombre": "Combo clásico",
-        "productos": [
-            {
-                "id": 1,
-                "nombre": "Hamburguesa simple",
-                "precio": 1000,
-                "categoria": "hamburguesas"
-            },
-            {
-                "id": 3,
-                "nombre": "Papas fritas chico",
-                "precio": 500,
-                "categoria": "acompañamientos"
-            },
-            {
-                "id": 5,
-                "nombre": "Gaseosa chico",
-                "precio": 400,
-                "categoria": "bebidas"
-            }
-        ],
-        "precio_base": 1900
-    },
-    {
-        "id": 2,
-        "nombre": "Combo doble",
-        "productos": [
-            {
-                "id": 2,
-                "nombre": "Hamburguesa doble",
-                "precio": 1500,
-                "categoria": "hamburguesas"
-            },
-            {
-                "id": 4,
-                "nombre": "Papas fritas grande",
-                "precio": 800,
-                "categoria": "acompañamientos"
-            },
-            {
-                "id": 6,
-                "nombre": "Gaseosa grande",
-                "precio": 700,
-                "categoria": "bebidas"
-            }
-        ],
-        "precio_base": 2700
-    },
-    {
-        "id": 3,
-        "nombre": "Test",
+        "nombre": "Combo Simple",
         "productos": [
             {
                 "id": 1,
@@ -69,6 +19,81 @@
                 "id": 1,
                 "nombre": "Coca-Cola",
                 "precio": 700,
+                "categoria": "bebidas"
+            }
+        ],
+        "precio_base": 2400
+    },
+    {
+        "id": 2,
+        "nombre": "Combo Argento",
+        "productos": [
+            {
+                "id": 7,
+                "nombre": "Hamburguesa criolla (huevo, jamón, morrón)",
+                "precio": 1950,
+                "categoria": "hamburguesas"
+            },
+            {
+                "id": 3,
+                "nombre": "Aros de cebolla",
+                "precio": 850,
+                "categoria": "acompañamientos"
+            },
+            {
+                "id": 4,
+                "nombre": "Manaos",
+                "precio": 500,
+                "categoria": "bebidas"
+            }
+        ],
+        "precio_base": 3300
+    },
+    {
+        "id": 3,
+        "nombre": "Combo Doble",
+        "productos": [
+            {
+                "id": 3,
+                "nombre": "Hamburguesa con cheddar y bacon",
+                "precio": 1800,
+                "categoria": "hamburguesas"
+            },
+            {
+                "id": 1,
+                "nombre": "Papas fritas",
+                "precio": 700,
+                "categoria": "acompañamientos"
+            },
+            {
+                "id": 1,
+                "nombre": "Coca-Cola",
+                "precio": 700,
+                "categoria": "bebidas"
+            }
+        ],
+        "precio_base": 3200
+    },
+    {
+        "id": 4,
+        "nombre": "Test Combo",
+        "productos": [
+            {
+                "id": 12,
+                "nombre": "Test Hamburguesa",
+                "precio": 9999,
+                "categoria": "hamburguesas"
+            },
+            {
+                "id": 9,
+                "nombre": "Test Acompañamiento",
+                "precio": 9999,
+                "categoria": "acompañamientos"
+            },
+            {
+                "id": 10,
+                "nombre": "Test Bebida",
+                "precio": 9999,
                 "categoria": "bebidas"
             }
         ],
