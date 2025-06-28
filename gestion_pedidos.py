@@ -8,7 +8,7 @@ from persistencia_cbc import (
     cargar_acompanamientos,
     cargar_combos,
 )
-from utils_cbc import limpiar_consola, mensaje_error, cancelacion_rapida
+from utils_cbc import limpiar_consola, mensaje_error, cancelacion_rapida, exportar_ticket_txt
 
 # ====== CONSTANTES GLOBALES ======
 # Límites y recargos utilizados en la personalización del pedido
@@ -380,6 +380,7 @@ def crear_pedido(pedidos, combos):
         if resumen_pedido(pedido):
             pedidos.append(pedido)
             guardar_pedidos(pedidos)
+            exportar_ticket_txt(pedido)
             print("\n----------------------------------\n")
             print(f"<<==== Pedido creado con éxito ====>>")
             print(f"> Número de ticket: {pedido['numero_ticket']}")

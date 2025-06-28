@@ -1,0 +1,17 @@
+===== Ticket de Pedido =====
+
+Fecha y Hora: 2025-06-28 19:24:43
+Número de Ticket: 48786
+Cliente: Ricardo
+
+Combo: Combo Argento
+
+Productos:
+ - Hamburguesa criolla (huevo, jamón, morrón): $1950
+ - Aros de cebolla: $850
+ - Manaos: $500
+
+Total a pagar: $3300
+
+Gracias por tu compra!
+--- Concordia Burger Club - 2025 ---

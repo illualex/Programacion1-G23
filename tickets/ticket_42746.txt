@@ -1,0 +1,20 @@
+===== Ticket de Pedido =====
+
+Fecha y Hora: 2025-06-28 19:26:22
+Número de Ticket: 42746
+Cliente: Roberto
+
+Combo: Combo Doble
+
+Productos:
+ - Hamburguesa con cheddar y bacon: $1800
+ - Papas fritas: $700
+ - Coca-Cola: $700
+Tamaño de bebida: grande (+$500)
+Tamaño de papas: grande (+$600)
+Tamaño de hamburguesa: grande (+$1000)
+
+Total a pagar: $5300
+
+Gracias por tu compra!
+--- Concordia Burger Club - 2025 ---

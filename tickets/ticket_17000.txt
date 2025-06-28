@@ -1,0 +1,20 @@
+===== Ticket de Pedido =====
+
+Fecha y Hora: 2025-06-28 19:25:30
+Número de Ticket: 17000
+Cliente: Marcos
+
+Productos:
+ - Hamburguesa con champiñones: $1700
+ - Aros de cebolla: $850
+ - Levité saborizada: $600
+
+Aderezos: 4
+Tamaño de bebida: mediano (+$300)
+Tamaño de papas: chica
+Tamaño de hamburguesa: grande (+$1000)
+
+Total a pagar: $4450
+
+Gracias por tu compra!
+--- Concordia Burger Club - 2025 ---

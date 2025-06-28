@@ -142,5 +142,149 @@
         "cliente": "Alejo",
         "numero_ticket": 38743,
         "fecha_hora": "2025-06-26 16:20:09"
+    },
+    {
+        "id": 5,
+        "combo": "Combo Argento",
+        "productos": [
+            {
+                "id": 7,
+                "nombre": "Hamburguesa criolla (huevo, jamón, morrón)",
+                "precio": 1950,
+                "categoria": "hamburguesas"
+            },
+            {
+                "id": 3,
+                "nombre": "Aros de cebolla",
+                "precio": 850,
+                "categoria": "acompañamientos"
+            },
+            {
+                "id": 4,
+                "nombre": "Manaos",
+                "precio": 500,
+                "categoria": "bebidas"
+            }
+        ],
+        "tamaño_bebida": null,
+        "recargo_tamaño_bebida": 0,
+        "tamaño_papas": null,
+        "recargo_tamaño_papas": 0,
+        "tamaño_hamburguesa": null,
+        "recargo_tamaño_hamburguesa": 0,
+        "cantidad_aderezos": 0,
+        "recargo_aderezos": 0,
+        "total": 3300,
+        "cliente": "Ricardo",
+        "numero_ticket": 48786,
+        "fecha_hora": "2025-06-28 19:24:43"
+    },
+    {
+        "id": 6,
+        "combo": null,
+        "productos": [
+            {
+                "id": 5,
+                "nombre": "Hamburguesa con champiñones",
+                "precio": 1700,
+                "categoria": "hamburguesas"
+            },
+            {
+                "id": 3,
+                "nombre": "Aros de cebolla",
+                "precio": 850,
+                "categoria": "acompañamientos"
+            },
+            {
+                "id": 6,
+                "nombre": "Levité saborizada",
+                "precio": 600,
+                "categoria": "bebidas"
+            }
+        ],
+        "tamaño_bebida": "mediano",
+        "recargo_tamaño_bebida": 300,
+        "tamaño_papas": "chica",
+        "recargo_tamaño_papas": 0,
+        "tamaño_hamburguesa": "grande",
+        "recargo_tamaño_hamburguesa": 1000,
+        "cantidad_aderezos": 4,
+        "recargo_aderezos": 0,
+        "total": 4450,
+        "cliente": "Marcos",
+        "numero_ticket": 17000,
+        "fecha_hora": "2025-06-28 19:25:30"
+    },
+    {
+        "id": 7,
+        "combo": "Combo Doble",
+        "productos": [
+            {
+                "id": 3,
+                "nombre": "Hamburguesa con cheddar y bacon",
+                "precio": 1800,
+                "categoria": "hamburguesas"
+            },
+            {
+                "id": 1,
+                "nombre": "Papas fritas",
+                "precio": 700,
+                "categoria": "acompañamientos"
+            },
+            {
+                "id": 1,
+                "nombre": "Coca-Cola",
+                "precio": 700,
+                "categoria": "bebidas"
+            }
+        ],
+        "tamaño_bebida": "grande",
+        "recargo_tamaño_bebida": 500,
+        "tamaño_papas": "grande",
+        "recargo_tamaño_papas": 600,
+        "tamaño_hamburguesa": "grande",
+        "recargo_tamaño_hamburguesa": 1000,
+        "cantidad_aderezos": 0,
+        "recargo_aderezos": 0,
+        "total": 5300,
+        "cliente": "Roberto",
+        "numero_ticket": 42746,
+        "fecha_hora": "2025-06-28 19:26:22"
+    },
+    {
+        "id": 8,
+        "combo": "Combo Argento",
+        "productos": [
+            {
+                "id": 7,
+                "nombre": "Hamburguesa criolla (huevo, jamón, morrón)",
+                "precio": 1950,
+                "categoria": "hamburguesas"
+            },
+            {
+                "id": 3,
+                "nombre": "Aros de cebolla",
+                "precio": 850,
+                "categoria": "acompañamientos"
+            },
+            {
+                "id": 4,
+                "nombre": "Manaos",
+                "precio": 500,
+                "categoria": "bebidas"
+            }
+        ],
+        "tamaño_bebida": null,
+        "recargo_tamaño_bebida": 0,
+        "tamaño_papas": null,
+        "recargo_tamaño_papas": 0,
+        "tamaño_hamburguesa": null,
+        "recargo_tamaño_hamburguesa": 0,
+        "cantidad_aderezos": 0,
+        "recargo_aderezos": 0,
+        "total": 3300,
+        "cliente": "Camila",
+        "numero_ticket": 67084,
+        "fecha_hora": "2025-06-28 19:27:31"
     }
 ]
