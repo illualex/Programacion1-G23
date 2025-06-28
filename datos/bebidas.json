@@ -1,56 +1,62 @@
 [
-  {
-    "id": 1,
-    "nombre": "Coca-Cola",
-    "precio": 700,
-    "categoria": "bebidas"
-  },
-  {
-    "id": 2,
-    "nombre": "Sprite",
-    "precio": 700,
-    "categoria": "bebidas"
-  },
-  {
-    "id": 3,
-    "nombre": "Fanta",
-    "precio": 700,
-    "categoria": "bebidas"
-  },
-  {
-    "id": 4,
-    "nombre": "Manaos",
-    "precio": 500,
-    "categoria": "bebidas"
-  },
-  {
-    "id": 5,
-    "nombre": "Agua mineral",
-    "precio": 400,
-    "categoria": "bebidas"
-  },
-  {
-    "id": 6,
-    "nombre": "Levité saborizada",
-    "precio": 600,
-    "categoria": "bebidas"
-  },
-  {
-    "id": 7,
-    "nombre": "Agua con gas",
-    "precio": 500,
-    "categoria": "bebidas"
-  },
-  {
-    "id": 8,
-    "nombre": "Pepsi",
-    "precio": 700,
-    "categoria": "bebidas"
-  },
-  {
-    "id": 9,
-    "nombre": "Paso de los Toros Pomelo",
-    "precio": 600,
-    "categoria": "bebidas"
-  }
+    {
+        "id": 1,
+        "nombre": "Coca-Cola",
+        "precio": 700,
+        "categoria": "bebidas"
+    },
+    {
+        "id": 2,
+        "nombre": "Sprite",
+        "precio": 700,
+        "categoria": "bebidas"
+    },
+    {
+        "id": 3,
+        "nombre": "Fanta",
+        "precio": 700,
+        "categoria": "bebidas"
+    },
+    {
+        "id": 4,
+        "nombre": "Manaos",
+        "precio": 500,
+        "categoria": "bebidas"
+    },
+    {
+        "id": 5,
+        "nombre": "Agua mineral",
+        "precio": 400,
+        "categoria": "bebidas"
+    },
+    {
+        "id": 6,
+        "nombre": "Levité saborizada",
+        "precio": 600,
+        "categoria": "bebidas"
+    },
+    {
+        "id": 7,
+        "nombre": "Agua con gas",
+        "precio": 500,
+        "categoria": "bebidas"
+    },
+    {
+        "id": 8,
+        "nombre": "Pepsi",
+        "precio": 700,
+        "categoria": "bebidas"
+    },
+    {
+        "id": 9,
+        "nombre": "Paso de los Toros Pomelo",
+        "precio": 600,
+        "categoria": "bebidas"
+    },
+    {
+        "id": 10,
+        "nombre": "Test Bebida",
+        "precio": 9999,
+        "categoria": "bebidas"
+    }
 ]

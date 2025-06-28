@@ -8,20 +8,20 @@ from persistencia_cbc import (
 from utils_cbc import limpiar_consola, mensaje_error, cancelacion_rapida
 
 
-# === FUNCIONES AUXILIARES ===
-# === Encabezado para crear un nuevo combo ===
+# ===== FUNCIONES AUXILIARES =====
+# Encabezado de crear combos
 def encabezado_combos():
-    print("\n======== Crear Nuevo Combo ========")
+    print("\n[======== Crear Nuevo Combo ========]")
     print(" - Salida rápida coloca 'x' -\n")
 
 
-# === Encabezado para modificar un combo ===
+# Encabezado de modificar combos
 def encabezado_modificar_combo():
-    print("\n======== Modificar Combo ========")
+    print("\n[======== Modificar Combo ========]")
     print(" - Salida rápida coloca 'x' -\n")
 
 
-# === Función para elegir un producto de una categoría ===
+# Función que permite elegir un producto de una categoría
 def elegir_producto(lista, categoria):
     while True:
         limpiar_consola()
@@ -32,7 +32,7 @@ def elegir_producto(lista, categoria):
 
         entrada = input(f"\n > Elige un producto de {categoria}: ").strip()
 
-        # Cancelación rápida
+        # Salida rápida con "x"
         if cancelacion_rapida(entrada):
             return False
 
@@ -40,6 +40,7 @@ def elegir_producto(lista, categoria):
             id_elegido = int(entrada)
             for prod in lista:
                 if prod["id"] == id_elegido:
+                    # Devuelve el producto con su categoría
                     return {**prod, "categoria": categoria}
             print("\n >> Producto no encontrado.")
             input("\n Presiona Enter para intentar de nuevo...")
@@ -47,7 +48,7 @@ def elegir_producto(lista, categoria):
             mensaje_error()
 
 
-# === Mostrar selección actual del combo ===
+# Función que muestra la selección de los productos para crear el combo
 def mostrar_seleccion_combo(hamb, acomp, beb, nombre=None, precio_base=None):
     print(" <<--- Productos para el combo --->>")
     print("> Selección:")
@@ -61,25 +62,24 @@ def mostrar_seleccion_combo(hamb, acomp, beb, nombre=None, precio_base=None):
         print(f"- Precio: $ {precio_base}")
 
 
-# === FUNCIONES PRINCIPALES ===
-# === Crear Combo ===
+# ===== FUNCIONES PRINCIPALES =====
+# Función que permite crear un nuevo combo
 def crear_combo():
     limpiar_consola()
     encabezado_combos()
 
-    # Cargar productos de cada categoría
+    # Se cargan los productos de cada categoría
     hamburguesas = cargar_hamburguesas()
     acompanamientos = cargar_acompanamientos()
     bebidas = cargar_bebidas()
 
+    # Validación si hay productos disponibles
     if not hamburguesas or not acompanamientos or not bebidas:
-        print(
-            "\n > [ERROR] Faltan productos para crear un combo. Verifica los archivos."
-        )
+        print("\n >> Faltan productos para crear un combo. Verifica los archivos.")
         input("\n Presiona Enter para volver al menú...")
         return
 
-    # Elegir un producto de cada categoría
+    # Selección de productos
     hamb = elegir_producto(hamburguesas, "hamburguesas")
     if hamb is False:
         return
@@ -92,43 +92,39 @@ def crear_combo():
     if beb is False:
         return
 
-    # Ingresar nombre del combo
+    # Ingreso y Validación del nombre del combo
     while True:
         limpiar_consola()
         encabezado_combos()
-        mostrar_seleccion_combo(hamb, acomp, beb)  # Sin nombre ni precio aún
-
+        mostrar_seleccion_combo(hamb, acomp, beb)
         nombre = input("\n > Ingresa el nombre del combo: ").strip()
         if cancelacion_rapida(nombre):
             return
         if not nombre:
-            print("\n > El nombre no puede estar vacío.")
+            print("\n >> El nombre no puede estar vacío.")
             input("\n Presiona Enter para intentar de nuevo...")
         else:
             break
 
-    # Ingresar precio base
+    # Ingreso y Validación del precio del combo
     while True:
         limpiar_consola()
         encabezado_combos()
-        mostrar_seleccion_combo(
-            hamb, acomp, beb, nombre=nombre
-        )  # Mostrar con nombre pero sin precio
-
+        mostrar_seleccion_combo(hamb, acomp, beb, nombre=nombre)
         entrada = input("\n > Ingresa el precio del combo: ").strip()
         if cancelacion_rapida(entrada):
             return
         try:
             precio_base = int(entrada)
             if precio_base <= 0:
-                print("\n > El precio debe ser mayor a 0")
+                print("\n >> El precio debe ser mayor a 0.")
                 input("\n Presiona Enter para intentar de nuevo...")
             else:
                 break
         except ValueError:
             mensaje_error()
 
-    # Confirmar creación del combo
+    # Confirmación para crear el combo
     while True:
         limpiar_consola()
         encabezado_combos()
@@ -144,6 +140,7 @@ def crear_combo():
             combos = cargar_combos()
             nuevo_id = max([combo["id"] for combo in combos], default=0) + 1
 
+            # Se arma el diccionario del nuevo combo
             nuevo_combo = {
                 "id": nuevo_id,
                 "nombre": nombre,
@@ -154,7 +151,7 @@ def crear_combo():
             combos.append(nuevo_combo)
             guardar_combos(combos)
 
-            print(f"\n << El Combo '{nombre}' creado con éxito >>")
+            print(f"\n << El Combo '{nombre}' creado con éxito! >>")
             input("\n Presiona Enter para volver al menú de combos...")
             break
 
@@ -166,15 +163,15 @@ def crear_combo():
             mensaje_error()
 
 
-# === Modificar Combo ===
+# Función que permite modificar un combo existente
 def modificar_combo():
     combos = cargar_combos()
     if not combos:
-        print("\n > No hay combos para modificar.")
+        print("\n >> No hay combos para modificar.")
         input("\n Presiona Enter para volver al menú...")
         return
 
-    # Elegir el combo a modificar
+    # Selección del combo a modificar
     while True:
         limpiar_consola()
         encabezado_modificar_combo()
@@ -195,7 +192,7 @@ def modificar_combo():
         except ValueError:
             mensaje_error()
 
-    # Modificar nombre
+    # Modificación del nombre
     while True:
         limpiar_consola()
         encabezado_modificar_combo()
@@ -209,12 +206,12 @@ def modificar_combo():
         if nuevo_nombre:
             combo_sel["nombre"] = nuevo_nombre
             limpiar_consola()
-            break  # Solo se rompe el bucle si el nombre es válido
+            break
         else:
             print("\n >> El nombre no puede estar vacío.")
             input("\n Presiona Enter para intentar de nuevo...")
 
-    # Modificar precio
+    # Modificación del precio
     while True:
         limpiar_consola()
         encabezado_modificar_combo()
@@ -237,15 +234,14 @@ def modificar_combo():
 
         precio = int(entrada)
         if precio <= 0:
-            print("\n >> El precio debe ser mayor a 0")
+            print("\n >> El precio debe ser mayor a 0.")
             input("\n Presiona Enter para intentar de nuevo...")
             continue
 
-        # Si pasó todas las validaciones, se actualiza el precio
         combo_sel["precio_base"] = precio
         break
 
-    # Confirmar cambios
+    # Confirmación para guardar el cambios
     while True:
         limpiar_consola()
         encabezado_modificar_combo()
@@ -256,14 +252,16 @@ def modificar_combo():
             print(f"  • {prod['nombre']} - ${prod['precio']}")
         print(f"- Precio base: ${combo_sel['precio_base']}")
         print("\n-----------------------------")
-        print("¿Deseás guardar los cambios?")
+        print(">> ¿Deseas guardar los cambios? <<")
         print("1. Sí, guardar")
         print("2. No, cancelar y volver al menú\n")
 
         opcion = input("> Elegí una opción: ").strip()
         if opcion == "1":
             guardar_combos(combos)
-            print(f"\n >> El Combo '{combo_sel['nombre']}' fue modificado con éxito.")
+            print(
+                f"\n >> El Combo '{combo_sel['nombre']}' fue modificado con éxito! <<"
+            )
             input("\n Presiona Enter para volver al menú...")
             return
         elif opcion == "2":
@@ -274,20 +272,18 @@ def modificar_combo():
             mensaje_error()
 
 
-# === Eliminar Combo ===
-# === Eliminar Combo ===
+# Función que permite eliminar un combo existente
 def eliminar_combo():
     combos = cargar_combos()
     if not combos:
-        print("\nNo hay combos para eliminar.")
-        input("\nPresiona Enter para volver al menú...")
+        print("\n >> No hay combos para eliminar.")
+        input("\n Presiona Enter para volver al menú...")
         return
 
     while True:
         limpiar_consola()
-        print("======== Eliminar Combo ========")
+        print("[======== Eliminar Combo ========]")
         print(" - Salida rápida coloca 'x' -\n")
-
         print(">> Combos disponibles <<")
         for combo in combos:
             print(f"{combo['id']}. {combo['nombre']}")
@@ -306,12 +302,12 @@ def eliminar_combo():
             input("\n Presiona Enter para intentar de nuevo...")
             continue
 
-        # Confirmación
+        # Confirmación de eliminación
         while True:
             limpiar_consola()
-            print("======== Eliminar Combo ========")
+            print("[======== Eliminar Combo ========]")
             print(" - Salida rápida coloca 'x' -\n")
-            print(f"> Seleccionaste: {combo_sel['nombre']}")
+            print(f"> Seleccionaste el combo: {combo_sel['nombre']}")
             print("\n>> ¿Estás seguro que querés eliminar este combo? <<")
             print("1. Sí, eliminar.")
             print("2. No, volver al menú de combos.")
@@ -321,7 +317,7 @@ def eliminar_combo():
             if opcion == "1":
                 combos = [c for c in combos if c["id"] != id_elim]
                 guardar_combos(combos)
-                print(f"\n >> Combo '{combo_sel['nombre']}' eliminado con éxito.")
+                print(f"\n >> Combo '{combo_sel['nombre']}' eliminado con éxito! <<")
                 input("\n Presiona Enter para volver al menú...")
                 return
 
@@ -334,11 +330,11 @@ def eliminar_combo():
                 mensaje_error()
 
 
-# === Menu de combos ===
+# Menu de gestión de combos
 def menu_combos():
     while True:
         limpiar_consola()
-        print("\n[======== Menú de Gestión de Combos =======]\n")
+        print("\n[======== Menu de Gestión de Combos =======]\n")
         print("1. Crear Combo")
         print("2. Modificar Combo")
         print("3. Eliminar Combo")
@@ -358,3 +354,8 @@ def menu_combos():
             break
         else:
             mensaje_error()
+
+
+# Iniciar el programa sin pasar por el main.py
+if __name__ == "__main__":
+    menu_combos()

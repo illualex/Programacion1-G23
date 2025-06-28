@@ -11,11 +11,10 @@ from persistencia_cbc import (
 from utils_cbc import limpiar_consola, mensaje_error, cancelacion_rapida
 
 # ====== CONSTANTES GLOBALES ======
-# === Recargos extra por aderezos ===
+# Límites y recargos utilizados en la personalización del pedido
 LIMITE_ADEREZOS_SIN_RECARGO = 5
 RECARGO_ADEREZOS = 100
 
-# === Recargos extra por personalización ===
 RECARGO_BEBIDA_MEDIANA = 300
 RECARGO_BEBIDA_GRANDE = 500
 
@@ -25,18 +24,17 @@ RECARGO_ACOMPANAMIENTO_GRANDES = 600
 RECARGO_HAMBURGUESA_MEDIANA = 600
 RECARGO_HAMBURGUESA_GRANDE = 1000
 
-
 # ====== FUNCIONES AUXILIARES ======
-# === Generar número de ticket random de 5 dígitos ===
+# Función que genera un número de ticket aleatorio de 5 dígitos
 def generar_numero_ticket():
     return random.randint(10000, 99999)
 
-# === Encabezado de armado del pedido ===
+# Función que muestra el encabezado del pedido
 def encabezado_pedido():
     print("\n[======== Armado de Pedido ========]")
     print(" - Salida rápida coloca 'x' -\n")
 
-# === Personalización del pedido ===
+# Función que maneja la personalización del pedido (tamaños de productos)
 def personalizacion_pedido(pedido):
     while True:
         limpiar_consola()
@@ -139,8 +137,7 @@ def personalizacion_pedido(pedido):
         else:
             mensaje_error()
 
-
-# === Resumen del pedido ===
+# Función que muestra un resumen del pedido antes de confirmarlo
 def resumen_pedido(pedido):
     while True:
         limpiar_consola()
@@ -148,23 +145,25 @@ def resumen_pedido(pedido):
         print(" <<---- Resumen del Pedido ---->>")
         print(f"Cliente: {pedido['cliente']}")
 
+        # Mostrar combo si se eligió
         if pedido.get("combo"):
             print(f"\nCombo: {pedido['combo']}")
 
+        # Mostrar los productos elegidos
         print("\nProductos:")
         for prod in pedido["productos"]:
             if isinstance(prod, dict):
                 print(f"- {prod['nombre']}: ${prod['precio']}")
             else:
-                print(f"- {prod}")  # Fallback si no tiene precio
+                print(f"- {prod}")
 
-        # Aderezos (si hay)
+        # Mostrar aderezos si se agregaron
         if pedido["cantidad_aderezos"] > 0:
             print(f"\nAderezos: {pedido['cantidad_aderezos']}")
             if pedido.get("recargo_aderezos", 0) > 0:
                 print(f"Recargo por exceso de aderezos: ${pedido['recargo_aderezos']}")
 
-        # Personalización (si hay)
+        # Mostrar personalizaciones (si hay)
         personalizaciones = []
         if pedido.get("tamaño_bebida"):
             recargo = pedido.get("recargo_tamaño_bebida", 0)
@@ -204,16 +203,18 @@ def resumen_pedido(pedido):
         if eleccion == "1":
             return True
         elif eleccion == "2":
-            print("\n >> Pedido cancelado.")
+            print("\n << Pedido cancelado.")
+            input("\n Presiona Enter para volver al menú de pedidos...")
             return False
         else:
             mensaje_error()
 
 
 # ====== FUNCIONES PRINCIPALES ======
-# === Crear Pedido ===
+# Función que permite crear un pedido a partir de productos y combos disponibles.
 def crear_pedido(pedidos, combos):
     while True:
+        # Se arma el diccionario del pedido
         pedido = {
             "id": len(pedidos) + 1,
             "combo": None,
@@ -232,7 +233,7 @@ def crear_pedido(pedidos, combos):
             "fecha_hora": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         }
 
-        # Selección de productos o combo
+        # Se pregunta si desea armar el pedido o elegir un combo
         while True:
             limpiar_consola()
             encabezado_pedido()
@@ -246,11 +247,13 @@ def crear_pedido(pedidos, combos):
                 break
             mensaje_error()
 
+        # Apartado para elegir un combo
         if opcion == "2":
             while True:
                 limpiar_consola()
                 encabezado_pedido()
                 print(" <<--- Combos disponibles --->>")
+                # Se listan los combos disponibles
                 for combo in combos:
                     print(f"{combo['id']}. {combo['nombre']}: ${combo['precio_base']}")
                 entrada = input("\n> Elige un combo: ").strip()
@@ -258,6 +261,7 @@ def crear_pedido(pedidos, combos):
                     return
                 try:
                     id_combo = int(entrada)
+                    # Se busca el combo seleccionado
                     combo_sel = next((c for c in combos if c["id"] == id_combo), None)
                     if combo_sel:
                         pedido["productos"] = combo_sel["productos"]
@@ -265,15 +269,19 @@ def crear_pedido(pedidos, combos):
                         pedido["combo"] = combo_sel["nombre"]
                         break
                     else:
-                        print(">> Combo no encontrado.")
+                        print("\n >> Combo no encontrado.")
+                        input("\n Presiona Enter para intentar de nuevo...")
                 except:
                     mensaje_error()
 
+        # Apartado para armar el pedido manualmente
         elif opcion == "1":
+            # Se cargan todos los productos disponibles de los archivos JSON
             productos = (
                 cargar_hamburguesas() + cargar_acompanamientos() + cargar_bebidas()
             )
             categorias = ["hamburguesas", "acompañamientos", "bebidas"]
+            # Se recorre cada categoría para seleccionar un producto de cada una
             for cat in categorias:
                 while True:
                     limpiar_consola()
@@ -287,6 +295,7 @@ def crear_pedido(pedidos, combos):
                         return
                     try:
                         id_sel = int(entrada)
+                        # Se busca el producto seleccionado
                         prod_sel = next(
                             (p for p in opciones if p["id"] == id_sel), None
                         )
@@ -299,7 +308,7 @@ def crear_pedido(pedidos, combos):
                     except:
                         mensaje_error()
 
-        # Aderezos
+        # Sección que pregunta si se desea agregar aderezos
         while True:
             limpiar_consola()
             encabezado_pedido()
@@ -311,6 +320,7 @@ def crear_pedido(pedidos, combos):
                 return
 
             if entrada == "1":
+                # Se solicita la cantidad de aderezos a agregar
                 while True:
                     limpiar_consola()
                     encabezado_pedido()
@@ -335,24 +345,24 @@ def crear_pedido(pedidos, combos):
             else:
                 mensaje_error()
 
-        # Aplicar recargo si hay exceso de aderezos
+        # Aplica recargo por exceso de aderezos
         exceso_aderezos = pedido["cantidad_aderezos"] - LIMITE_ADEREZOS_SIN_RECARGO
-
         if exceso_aderezos > 0:
             recargo_total = 0
+            # Se calcula un recargo creciente según cantidad de aderezos extras
             for i in range(exceso_aderezos):
                 recargo_total += RECARGO_ADEREZOS * (1.2**i)
-            recargo_total = int(recargo_total)  # Redondeamos a entero
+            recargo_total = int(recargo_total)
             pedido["recargo_aderezos"] = recargo_total
             pedido["total"] += recargo_total
         else:
             pedido["recargo_aderezos"] = 0
 
-        # Personalización
+        # Sección que pregunta si se desea personalizar el pedido
         if not personalizacion_pedido(pedido):
             return
 
-        # Cliente
+        # Sección que solicita el nombre del cliente
         while True:
             limpiar_consola()
             encabezado_pedido()
@@ -366,7 +376,7 @@ def crear_pedido(pedidos, combos):
             print("\n >> El nombre no puede estar vacío.")
             input("\n Presiona Enter para intentar de nuevo...")
 
-        # Confirmar y guardar
+        # Sección que muestra un resumen del pedido y solicita confirmación
         if resumen_pedido(pedido):
             pedidos.append(pedido)
             guardar_pedidos(pedidos)
@@ -377,11 +387,11 @@ def crear_pedido(pedidos, combos):
         else:
             input("\n Presiona Enter para continuar...")
 
-        # Crear otro pedido o salir
+        # Sección que pregunta si se desea crear otro pedido
         while True:
             limpiar_consola()
             encabezado_pedido()
-            print(" >>> ¿Deseas crear otro pedido? <<<")
+            print(" >> ¿Deseas crear otro pedido? <<")
             print("1. Sí")
             print("2. No, volver al menú de pedidos")
             opcion = input("\n > Elige una opción: ").strip()
@@ -395,40 +405,44 @@ def crear_pedido(pedidos, combos):
             else:
                 mensaje_error()
 
-
-# === Ver Pedido por Ticket ===
+# Función para buscar un pedido por su número de ticket
 def ver_pedido_por_ticket(pedidos):
+    # Verifica si hay pedidos cargados
     if not pedidos:
         print("\n >> No hay pedidos cargados.")
         input("\n Presiona Enter para continuar...")
         return
 
+    # Se cargan todos los productos para poder identificar los productos por nombre
     productos_base = cargar_hamburguesas() + cargar_acompanamientos() + cargar_bebidas()
 
     while True:
         limpiar_consola()
-        print("\n===== Buscar Pedido por Número de Ticket =====")
+        print("\n[======== Buscar Pedido por Número de Ticket ========]")
         print(" <-- Coloca 'x' para salir -->\n")
         entrada = input("> Ingresa el número de ticket: ").strip()
         if cancelacion_rapida(entrada):
             return
 
+        # Validación de entrada
         if not entrada.isdigit():
             mensaje_error()
             continue
 
         ticket_buscar = int(entrada)
+
+        # Busca el pedido en la lista usando el número de ticket
         pedido = next(
             (p for p in pedidos if p.get("numero_ticket") == ticket_buscar), None
         )
 
-        # Si el ticket no fue encontrado
+        # Si no se encuentra el ticket
         if not pedido:
             print("\n >> Pedido no encontrado con ese número de ticket.")
             input("\n Presiona Enter para intentar con otro número...")
             continue
 
-        # Si el ticket fue encontrado
+        # Si se encuentra el pedido, se muestra sus detalles
         while True:
             limpiar_consola()
             print("\n===== Buscar Pedido por Número de Ticket =====")
@@ -437,13 +451,17 @@ def ver_pedido_por_ticket(pedidos):
             print(f"Fecha y Hora: {pedido.get('fecha_hora')}")
             print(f"Cliente: {pedido['cliente']}")
 
+            # Si el pedido fue hecho con un combo, se muestra su nombre
             if pedido.get("combo"):
                 print(f"Combo: {pedido['combo']}")
 
+            # Muestra los productos incluidos en el pedido
             print("Productos:")
             for prod in pedido["productos"]:
+                # Si el producto es un diccionario, se muestra directamente
                 if isinstance(prod, dict):
                     print(f"  - {prod['nombre']}: ${prod['precio']}")
+                # Si es un string, se busca en la lista de productos
                 elif isinstance(prod, str):
                     prod_info = next(
                         (p for p in productos_base if p["nombre"] == prod), None
@@ -455,7 +473,9 @@ def ver_pedido_por_ticket(pedidos):
                 else:
                     print(f"  - {prod}: (formato no reconocido)")
 
+            # Muestra la personalización del pedido si existe
             personalizaciones = []
+
             if pedido.get("tamaño_bebida"):
                 recargo = pedido.get("recargo_tamaño_bebida", 0)
                 texto = f"- Tamaño de bebida: {pedido['tamaño_bebida']}"
@@ -477,11 +497,13 @@ def ver_pedido_por_ticket(pedidos):
                     texto += f" (+${recargo})"
                 personalizaciones.append(texto)
 
+            # Si hay personalizaciones, se muestran en bloque
             if personalizaciones:
                 print("Personalización:")
                 for item in personalizaciones:
                     print(item)
 
+            # Mostrar cantidad de aderezos y recargo si hay exceso
             if pedido.get("cantidad_aderezos", 0) > 0:
                 print(f"Cantidad de aderezos: {pedido['cantidad_aderezos']}")
                 if pedido.get("recargo_aderezos", 0) > 0:
@@ -489,16 +511,18 @@ def ver_pedido_por_ticket(pedidos):
                         f"Recargo por exceso de aderezos: ${pedido['recargo_aderezos']}"
                     )
 
+            # Mostrar el total final del pedido
             print(f"\nTotal: ${pedido['total']}")
 
-            # Confirmar si desea ver otro pedido
-            print("\n -->>> ¿Deseas ver otro pedido? <<<--")
+            # Preguntar si se desea ver otro pedido
+            print("\n----------------------------------")
+            print(" >> ¿Deseas ver otro pedido? <<")
             print("1. Sí")
             print("2. No, volver al menú de pedidos")
             opcion = input("\n > Elige una opción: ").strip()
 
             if opcion == "1":
-                break
+                break  # Vuelve al bucle principal para ingresar otro ticket
             elif opcion == "2":
                 print("\n << Volviendo al menú de pedidos...")
                 input("\n Presiona Enter para continuar...")
@@ -506,9 +530,9 @@ def ver_pedido_por_ticket(pedidos):
             else:
                 mensaje_error()
 
-
-# === Eliminar Pedido por Ticket ===
+# Función que permite eliminar un pedido existente por su número de ticket
 def eliminar_pedido(pedidos):
+    # Verifica si hay pedidos cargados
     if not pedidos:
         print("\n >> No hay pedidos cargados.")
         input("\n Presiona Enter para continuar...")
@@ -519,34 +543,41 @@ def eliminar_pedido(pedidos):
         print("\n===== Eliminar Pedido por Número de Ticket =====")
         print("<-- Coloca 'x' para salir -->\n")
 
+        # Se solicita el número de ticket a eliminar
         entrada = input("Ingresa el número de ticket: ").strip()
         if cancelacion_rapida(entrada):
-            return
+            return  # Permite salir del proceso en cualquier momento
 
+        # Validación de entrada
         if not entrada.isdigit():
             mensaje_error()
             continue
 
         ticket_eliminar = int(entrada)
+
+        # Se busca el pedido con ese número de ticket
         pedido = next(
             (p for p in pedidos if p.get("numero_ticket") == ticket_eliminar), None
         )
 
+        # Si no se encuentra, se informa y se vuelve a pedir
         if not pedido:
             print(f"\n >> No se encontró un pedido con el ticket {ticket_eliminar}.")
             input("\n Presiona Enter para intentar de nuevo...")
             continue
 
+        # Si se encuentra el pedido, se elimina de la lista
         pedidos.remove(pedido)
         guardar_pedidos(pedidos)
         print(f"\n >> Pedido con ticket {ticket_eliminar} eliminado con éxito.")
 
-        # Preguntar si desea eliminar otro
+        # Preguntar si se desea eliminar otro pedido
         while True:
             limpiar_consola()
             print("\n===== Eliminar Pedido por Número de Ticket =====")
-            print(f"\n >> Pedido con ticket {ticket_eliminar} eliminado con éxito.")
-            print("\n -->>> ¿Deseas eliminar otro pedido? <<<--")
+            print(f"\n >> Pedido con ticket {ticket_eliminar} eliminado con éxito! <<")
+            print("\n --------------------------------------")
+            print(" >> ¿Deseas eliminar otro pedido? <<")
             print("1. Sí")
             print("2. No, volver al menú de pedidos")
             opcion = input("\n > Elige una opción: ").strip()
@@ -560,15 +591,15 @@ def eliminar_pedido(pedidos):
             else:
                 mensaje_error()
 
-
-# ===== Menu de pedidos =====
+# Función que muestra el menú de gestión de pedidos
 def menu_pedidos():
+    # Se cargan los pedidos y combos existentes desde los archivos JSON
     pedidos = cargar_pedidos()
     combos = cargar_combos()
 
     while True:
         limpiar_consola()
-        print("\n[======== Menu de Gestión de Pedidos ========]\n")
+        print("\n[======== Menú de Gestión de Pedidos ========]\n")
         print("1. Crear pedido")
         print("2. Buscar pedido (Nrm Ticket)")
         print("3. Eliminar pedido (Nrm Ticket)")
@@ -593,8 +624,8 @@ def menu_pedidos():
             input("\n Presiona Enter para continuar...")
             break
         else:
-            mensaje_error()
+            mensaje_error() 
 
-
+# Iniciar el programa sin pasar por el main.py
 if __name__ == "__main__":
     menu_pedidos()

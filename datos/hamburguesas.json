@@ -1,68 +1,74 @@
 [
-  {
-    "id": 1,
-    "nombre": "Hamburguesa simple",
-    "precio": 1000,
-    "categoria": "hamburguesas"
-  },
-  {
-    "id": 2,
-    "nombre": "Hamburguesa doble",
-    "precio": 1500,
-    "categoria": "hamburguesas"
-  },
-  {
-    "id": 3,
-    "nombre": "Hamburguesa con cheddar y bacon",
-    "precio": 1800,
-    "categoria": "hamburguesas"
-  },
-  {
-    "id": 4,
-    "nombre": "Hamburguesa completa",
-    "precio": 2000,
-    "categoria": "hamburguesas"
-  },
-  {
-    "id": 5,
-    "nombre": "Hamburguesa con champiñones",
-    "precio": 1700,
-    "categoria": "hamburguesas"
-  },
-  {
-    "id": 6,
-    "nombre": "Hamburguesa cuatro quesos",
-    "precio": 1900,
-    "categoria": "hamburguesas"
-  },
-  {
-    "id": 7,
-    "nombre": "Hamburguesa criolla (huevo, jamón, morrón)",
-    "precio": 1950,
-    "categoria": "hamburguesas"
-  },
-  {
-    "id": 8,
-    "nombre": "Hamburguesa veggie [VEGANO]",
-    "precio": 1600,
-    "categoria": "hamburguesas"
-  },
-  {
-    "id": 9,
-    "nombre": "Hamburguesa de lentejas [VEGANO]",
-    "precio": 1500,
-    "categoria": "hamburguesas"
-  },
-  {
-    "id": 10,
-    "nombre": "Hamburguesa de garbanzos [VEGANO]",
-    "precio": 1600,
-    "categoria": "hamburguesas"
-  },
-  {
-    "id": 11,
-    "nombre": "Hamburguesa de soja y espinaca [VEGANO]",
-    "precio": 1550,
-    "categoria": "hamburguesas"
-  }
+    {
+        "id": 1,
+        "nombre": "Hamburguesa simple",
+        "precio": 1000,
+        "categoria": "hamburguesas"
+    },
+    {
+        "id": 2,
+        "nombre": "Hamburguesa doble",
+        "precio": 1500,
+        "categoria": "hamburguesas"
+    },
+    {
+        "id": 3,
+        "nombre": "Hamburguesa con cheddar y bacon",
+        "precio": 1800,
+        "categoria": "hamburguesas"
+    },
+    {
+        "id": 4,
+        "nombre": "Hamburguesa completa",
+        "precio": 2000,
+        "categoria": "hamburguesas"
+    },
+    {
+        "id": 5,
+        "nombre": "Hamburguesa con champiñones",
+        "precio": 1700,
+        "categoria": "hamburguesas"
+    },
+    {
+        "id": 6,
+        "nombre": "Hamburguesa cuatro quesos",
+        "precio": 1900,
+        "categoria": "hamburguesas"
+    },
+    {
+        "id": 7,
+        "nombre": "Hamburguesa criolla (huevo, jamón, morrón)",
+        "precio": 1950,
+        "categoria": "hamburguesas"
+    },
+    {
+        "id": 8,
+        "nombre": "Hamburguesa veggie [VEGANO]",
+        "precio": 1600,
+        "categoria": "hamburguesas"
+    },
+    {
+        "id": 9,
+        "nombre": "Hamburguesa de lentejas [VEGANO]",
+        "precio": 1500,
+        "categoria": "hamburguesas"
+    },
+    {
+        "id": 10,
+        "nombre": "Hamburguesa de garbanzos [VEGANO]",
+        "precio": 1600,
+        "categoria": "hamburguesas"
+    },
+    {
+        "id": 11,
+        "nombre": "Hamburguesa de soja y espinaca [VEGANO]",
+        "precio": 1550,
+        "categoria": "hamburguesas"
+    },
+    {
+        "id": 12,
+        "nombre": "Test Hamburguesa",
+        "precio": 9999,
+        "categoria": "hamburguesas"
+    }
 ]

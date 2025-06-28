@@ -1,50 +1,56 @@
 [
-  {
-    "id": 1,
-    "nombre": "Papas fritas",
-    "precio": 700,
-    "categoria": "acompañamientos"
-  },
-  {
-    "id": 2,
-    "nombre": "Papas fritas con cheddar",
-    "precio": 900,
-    "categoria": "acompañamientos"
-  },
-  {
-    "id": 3,
-    "nombre": "Aros de cebolla",
-    "precio": 850,
-    "categoria": "acompañamientos"
-  },
-  {
-    "id": 4,
-    "nombre": "Nachos con queso",
-    "precio": 950,
-    "categoria": "acompañamientos"
-  },
-  {
-    "id": 5,
-    "nombre": "Bastones de muzzarella",
-    "precio": 1000,
-    "categoria": "acompañamientos"
-  },
-  {
-    "id": 6,
-    "nombre": "Palitos de polenta [VEGANO]",
-    "precio": 850,
-    "categoria": "acompañamientos"
-  },
-  {
-    "id": 7,
-    "nombre": "Papas rústicas con especias [VEGANO]",
-    "precio": 800,
-    "categoria": "acompañamientos"
-  },
-  {
-    "id": 8,
-    "nombre": "Bastones de zanahoria y batata [VEGANO]",
-    "precio": 900,
-    "categoria": "acompañamientos"
-  }
+    {
+        "id": 1,
+        "nombre": "Papas fritas",
+        "precio": 700,
+        "categoria": "acompañamientos"
+    },
+    {
+        "id": 2,
+        "nombre": "Papas fritas con cheddar",
+        "precio": 900,
+        "categoria": "acompañamientos"
+    },
+    {
+        "id": 3,
+        "nombre": "Aros de cebolla",
+        "precio": 850,
+        "categoria": "acompañamientos"
+    },
+    {
+        "id": 4,
+        "nombre": "Nachos con queso",
+        "precio": 950,
+        "categoria": "acompañamientos"
+    },
+    {
+        "id": 5,
+        "nombre": "Bastones de muzzarella",
+        "precio": 1000,
+        "categoria": "acompañamientos"
+    },
+    {
+        "id": 6,
+        "nombre": "Palitos de polenta [VEGANO]",
+        "precio": 850,
+        "categoria": "acompañamientos"
+    },
+    {
+        "id": 7,
+        "nombre": "Papas rústicas con especias [VEGANO]",
+        "precio": 800,
+        "categoria": "acompañamientos"
+    },
+    {
+        "id": 8,
+        "nombre": "Bastones de zanahoria y batata [VEGANO]",
+        "precio": 900,
+        "categoria": "acompañamientos"
+    },
+    {
+        "id": 9,
+        "nombre": "Test Acompañamiento",
+        "precio": 9999,
+        "categoria": "acompañamientos"
+    }
 ]

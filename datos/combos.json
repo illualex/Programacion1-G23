@@ -48,5 +48,30 @@
             }
         ],
         "precio_base": 2700
+    },
+    {
+        "id": 3,
+        "nombre": "Test",
+        "productos": [
+            {
+                "id": 1,
+                "nombre": "Hamburguesa simple",
+                "precio": 1000,
+                "categoria": "hamburguesas"
+            },
+            {
+                "id": 1,
+                "nombre": "Papas fritas",
+                "precio": 700,
+                "categoria": "acompañamientos"
+            },
+            {
+                "id": 1,
+                "nombre": "Coca-Cola",
+                "precio": 700,
+                "categoria": "bebidas"
+            }
+        ],
+        "precio_base": 9999
     }
 ]
