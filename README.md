@@ -6,6 +6,7 @@
 - Nicolas Brasuna
 
 - Repositorio GitHub: https://github.com/illualex/Programacion1-G23.git
+- Iniciar el programa por consola: python main.py
 
 ---
 

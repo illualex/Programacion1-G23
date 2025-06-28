@@ -15,7 +15,7 @@ def menu_principal():
         print("4. Ver Reportes")
         print("5. Salir")
 
-        opcion = input("\n Ingrese una opción: ").strip()
+        opcion = input("\n > Ingrese una opción: ").strip()
 
         # Navega a la sección correspondiente según la opción elegida
         if opcion == '1':
